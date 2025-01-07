@@ -1,16 +1,22 @@
 import pandas as pd
+from openpyxl import load_workbook
 
-def generate_excel(data_dict):
-    with pd.ExcelWriter("osint_report.xlsx") as writer:
-        for tool_name, data in data_dict.items():
-            df = pd.DataFrame(data)
-            df.to_excel(writer, sheet_name=f"{tool_name} Results", index=False)
+def write_to_excel(df, sheet_name="Sheet1"):
+    filename = "osint_report.xlsx"
+    
+    try:
+        # Check if the file exists, load it; otherwise, create a new Excel file
+        try:
+            writer = pd.ExcelWriter(filename, mode='a', engine='openpyxl')
+        except FileNotFoundError:
+            writer = pd.ExcelWriter(filename, mode='w', engine='openpyxl')
 
-if __name__ == "__main__":
-    # Example usage
-    sample_data = {
-        "Chaos": [{"Domain": "example.com", "Subdomain": "sub.example.com"}],
-        "Shodan": [{"IP": "8.8.8.8", "Open Ports": [80, 443]}],
-        "Subfinder": [{"Subdomain": "sub.example.com"}, {"Subdomain": "test.example.com"}]
-    }
-    generate_excel(sample_data)
+        # Write the DataFrame to the specified sheet
+        df.to_excel(writer, index=False, sheet_name=sheet_name)
+
+        # Save the workbook
+        writer.close()
+
+        print(f"Data written to {filename} successfully.")
+    except Exception as e:
+        print(f"Error writing to Excel: {str(e)}")

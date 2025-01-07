@@ -6,22 +6,18 @@ services:
       context: .
     command: python3 main.py
     volumes:
-      - .:/app
+      - "C:/Users/Joshw/OneDrive/Desktop/hacket-osint:/app"
     depends_on:
-      - chaos
-      - shodan
       - subfinder
+      - crosslinked
 
   subfinder:
     build:
       context: ./tools/subfinder
     command: subfinder -d example.com
-  chaos:
-    build:
-      context: ./tools/online_tools
-    command: python3 chaos.py
 
-  shodan:
+  crosslinked:
     build:
-      context: ./tools/online_tools/shodan
-    command: python3 shodan.py
+      context: ./tools/crosslinked
+    volumes:
+      - ./output:/app/output
