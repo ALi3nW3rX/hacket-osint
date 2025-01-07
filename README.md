@@ -126,5 +126,5 @@ This project is licensed under the MIT License. See the **LICENSE** file for mor
 
 ## Contact
 For any inquiries or issues, contact:
-- **Author:** Eric Natel
-- **GitHub:** [yourusername](https://github.com/yourusername)
+
+- **GitHub:** [ali3nw3rx](https://github.com/ali3nw3rx)
