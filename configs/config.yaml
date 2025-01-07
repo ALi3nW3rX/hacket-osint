@@ -1,0 +1,5 @@
+chaos:
+  api_key: "feacc682-0064-40d9-b94e-e4287478164d"
+
+shodan:
+  api_key: "YOUR_SHODAN_API_KEY"

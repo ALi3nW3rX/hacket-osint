@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  osint-main:
+    build:
+      context: .
+    command: python3 main.py
+    volumes:
+      - .:/app
+    depends_on:
+      - chaos
+      - shodan
+      - subfinder
+
+  subfinder:
+    build:
+      context: ./tools/subfinder
+    command: subfinder -d example.com
+  chaos:
+    build:
+      context: ./tools/online_tools
+    command: python3 chaos.py
+
+  shodan:
+    build:
+      context: ./tools/online_tools/shodan
+    command: python3 shodan.py
