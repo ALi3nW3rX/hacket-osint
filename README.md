@@ -1,4 +1,5 @@
-# Hacket OSINT
+# Hacket OSINT (WORK IN PROGRESS)
+#### Use at your own risk and patience. This is a work in progress and is not yet ready for use.
 
 [toc]
 
