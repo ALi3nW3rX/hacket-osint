@@ -14,7 +14,10 @@ services:
   subfinder:
     build:
       context: ./tools/subfinder
-    command: subfinder -d example.com
+    volumes:
+      - ./configs:/app/configs
+      - ./output:/app/output
+    entrypoint: ["/go/bin/subfinder"]
 
   crosslinked:
     build:

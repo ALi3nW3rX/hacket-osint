@@ -3,3 +3,12 @@ chaos:
 
 shodan:
   api_key: "YOUR_SHODAN_API_KEY"
+
+subfinder:
+  providers:
+    - "virustotal"
+    - "securitytrails"
+  api_keys:
+    virustotal: "your_virustotal_api_key"
+    securitytrails: "key"
+    chaos: "key"
