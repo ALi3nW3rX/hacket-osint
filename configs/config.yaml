@@ -8,6 +8,7 @@ subfinder:
   providers:
     - "virustotal"
     - "securitytrails"
+    - "chaos"
   api_keys:
     virustotal: "your_virustotal_api_key"
     securitytrails: "key"

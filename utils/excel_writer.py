@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from openpyxl import Workbook, load_workbook
+from utils.color_logger import log_info, log_success, log_error, log_warning
 
 def write_to_excel(df, filename="osint_report.xlsx", sheet_name="Sheet1"):
     try:
@@ -13,6 +14,6 @@ def write_to_excel(df, filename="osint_report.xlsx", sheet_name="Sheet1"):
         with pd.ExcelWriter(filename, mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
             df.to_excel(writer, index=False, sheet_name=sheet_name)
 
-        print(f"Data written to {filename} successfully.")
+        log_success(f"Data written to {filename} successfully.")
     except Exception as e:
-        print(f"Error writing to Excel: {str(e)}")
+        log_error(f"Error writing to Excel: {str(e)}")

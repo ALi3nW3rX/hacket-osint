@@ -1,5 +1,6 @@
 import yaml
 import os
+from utils.color_logger import log_info, log_success, log_error, log_warning
 
 def generate_subfinder_config():
     # Load the main config.yaml
@@ -23,7 +24,7 @@ def generate_subfinder_config():
     with open("/root/.config/subfinder/config.yaml", "w") as file:
         yaml.dump(subfinder_config, file)
 
-    print("Subfinder config generated successfully!")
+    log_info(f"Subfinder config generated successfully!")
 
 if __name__ == "__main__":
     generate_subfinder_config()

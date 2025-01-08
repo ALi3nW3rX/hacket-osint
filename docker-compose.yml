@@ -10,6 +10,7 @@ services:
     depends_on:
       - subfinder
       - crosslinked
+      - checkmdi
 
   subfinder:
     build:
@@ -24,3 +25,10 @@ services:
       context: ./tools/crosslinked
     volumes:
       - ./output:/app/output
+
+  checkmdi:
+    build:
+      context: ./tools/checkmdi
+    volumes:
+      - ./output:/app/output
+    command: ["sleep", "infinity"]
