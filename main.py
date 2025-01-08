@@ -32,8 +32,7 @@ def run_checkmdi(domain):
 def run_osint(domain, email_format, company):
     log_info("Running OSINT tools...")
 
-
-    # Run CheckMDI
+    # Run OSINT Tools Only
     tools_with_args = [
         (get_domains, (domain,)),
         (run_crosslinked, (email_format, company)),

@@ -14,8 +14,8 @@ def run_in_threads(functions_with_args):
         thread = threading.Thread(target=func, args=args)
         threads.append(thread)
         thread.start()
-        log_info(f"Running {func.__name__}")
+        
 
     for thread in threads:
         thread.join()
-        log_success(f"{func.__name__} finished successfully.")
+        
