@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
   osint-main:
     build:
       context: .
     command: python3 main.py
     volumes:
-      - "C:/Users/"
+      - "local file path:/app"
     depends_on:
       - subfinder
       - crosslinked
