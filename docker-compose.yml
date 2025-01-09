@@ -6,7 +6,7 @@ services:
       context: .
     command: python3 main.py
     volumes:
-      - "C:/Users/Joshw/OneDrive/Desktop/hacket-osint:/app"
+      - "C:/Users/"
     depends_on:
       - subfinder
       - crosslinked
